@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Form Login</title>
+</head>
+<body>
+<div class="login" background-color="#7FFFD4">
+	<form>
+		<fieldset>
+		<center>
+		<legend><h1><b>LOGIN</b></h1></legend>
+		<p>
+			<label>Username:</label>
+			<input type="text" name="username" placeholder="username..." id="nama" />
+		</p>
+		<p>
+			<label>Password:</label>
+			<input type="password" name="password" placeholder="password..." id="pass" />
+		</p>
+		<p>
+			<h2><input type="submit" onclick="button()" name="submit" value="LOGIN" /></h2>
+		</p>
+		</center>
+		</fieldset>
+	</form>
+</div>
+
+<script type="text/javascript">
+	function button(){
+		a = document.getElementById('nama').value;
+		b = document.getElementById('pass').value;
+		if(a=="datul" && b=="saidatul"){
+			alert("Selamat Anda Berhasil Login");
+			window.location.assign("tugass.html")
+		} else{
+			alert("Username atau Password Salah!!!");
+		}
+	}
+</script>
+	
+</body>
+</html>

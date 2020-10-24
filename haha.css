@@ -1,0 +1,30 @@
+body{
+	background-color: grey;
+	font-family: sans-serif;
+}
+
+h1{
+	text-align: center;
+	margin: 50px auto;
+}
+
+.login{
+	text-align: center;
+	width: 290px;
+	height: 115px;
+	background: grey;
+	margin: 60px auto;
+	padding-top: 30px;
+	border-radius: 4px;
+
+}
+
+.form{
+	font-size: 12pt;
+}
+
+.tombol{
+	border-radius: 9px;
+	color: #740;
+	font-weight: 20;
+}

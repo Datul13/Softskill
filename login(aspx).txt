@@ -1,0 +1,30 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="login.aspx.cs" Inherits="WebApplication1.login" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <center>
+            <h1>LOGIN</h1>
+        <p>
+            Username :
+            <asp:TextBox ID="TextBox1" runat="server" Width="193px"></asp:TextBox>
+        </p>
+        <p>
+            Password :
+            <asp:TextBox ID="TextBox2" runat="server" Width="193px" TextMode="Password"></asp:TextBox>
+        </p>
+            <p>
+            <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
+        </p>
+        <asp:Button ID="Button1" runat="server" Height="32px" Text="LOGIN" Width="78px" OnClick="Button1_Click" />
+            <br />
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Table]"></asp:SqlDataSource>
+        </center>
+    </form>
+</body>
+</html>

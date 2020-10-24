@@ -1,0 +1,40 @@
+﻿using System;
+using System.Configuration;
+using System.Data.SqlClient;
+
+namespace WebApplication1
+{
+    public partial class login : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            SqlConnection d = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+            d.Open();
+            string cek = "SELECT COUNT(*) FROM [Table] WHERE username = '" + TextBox1.Text + "'";
+            SqlCommand query = new SqlCommand(cek, d);
+            int jumlah = Convert.ToInt32(query.ExecuteScalar().ToString());
+            d.Close();
+            if (jumlah == 1)
+            {
+                d.Open();
+                string password = "SELECT password FROM [Table] WHERE username = '" + TextBox1.Text + "'";
+                SqlCommand passquery = new SqlCommand(password, d);
+                string pass = passquery.ExecuteScalar().ToString();
+                d.Close();
+                if (password == TextBox2.Text) ;
+                {
+                    Response.Redirect("Data.aspx");
+                }
+            }
+            else
+            {
+                Label1.Text = "Username atau Password Salah";
+            }
+        }
+    }
+}

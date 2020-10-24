@@ -1,0 +1,38 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Biodata.aspx.cs" Inherits="WebApplication2.Biodata" %>
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Biodata</title>
+</head>
+<body style="background-color:skyblue">
+    <font color="blue">
+    <form id="form1" runat="server">
+	<center>
+	<h1>BIODATA</h1>
+	<table style="width:50%" >
+    <tr>
+    <td>Nama</td>
+    <td>Saidatul Arifah</td>
+    </tr>
+    <tr>
+    <td>Tempat/Tanggal Lahir</td>
+    <td>Pekalongan, 13 Juli 1999</td>
+    </tr>
+    <tr>
+    <td>Alamat</td>
+    <td>Bojong, Pekalongan</td>
+    </tr>
+    <tr>
+    <td>Jenis Kelamin</td>
+    <td>Perempuan</td>
+    </tr>
+    <tr>
+    <td>Agama</td>
+    <td>Islam</td>
+    </tr>
+    </table>
+    </center>
+    </form>
+    </font>
+</body>

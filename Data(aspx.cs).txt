@@ -1,0 +1,78 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Configuration;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace WebApplication1
+{
+    public partial class WebForm1 : System.Web.UI.Page
+    {
+        private object cmd;
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            SqlConnection d = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString2"].ConnectionString);
+            d.Open();
+            string cekNpm = "SELECT COUNT(*) FROM [Table] WHERE NPM='" + npm.Text + "'";
+            SqlCommand query = new SqlCommand(cekNpm, d);
+            int jumlah = Convert.ToInt32(query.ExecuteScalar().ToString());
+            d.Close();
+            if(jumlah != 0)
+            {
+                Response.Write("NPM sudah digunakan");
+                npm.Text = null;
+                nama.Text = null;
+                kelas.Text = null;
+                jurusan.Text = null;
+                fakultas.Text = null;
+            }
+            else
+            {
+                d.Open();
+                string insert = "INSERT INTO [Table] (npm,nama,kelas,jurusan,fakultas) VALUES (@NPM, @Nama, @Kelas, @Jurusan, @Fakultas)";
+                SqlCommand insertquery = new SqlCommand(insert, d);
+                insertquery.Parameters.AddWithValue("@NPM", npm.Text);
+                insertquery.Parameters.AddWithValue("@Nama", nama.Text);
+                insertquery.Parameters.AddWithValue("@Kelas", kelas.Text);
+                insertquery.Parameters.AddWithValue("@Jurusan", jurusan.Text);
+                insertquery.Parameters.AddWithValue("@Fakultas", fakultas.Text);
+                insertquery.ExecuteNonQuery();
+                GridView1.DataBind();
+                d.Close();
+
+                npm.Text = null;
+                nama.Text = null;
+                kelas.Text = null;
+                jurusan.Text = null;
+                fakultas.Text = null;
+            }
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            npm.Text = null;
+            nama.Text = null;
+            kelas.Text = null;
+            jurusan.Text = null;
+            fakultas.Text = null;
+        }
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void SqlDataSource2_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
+        {
+
+        }
+    }
+}

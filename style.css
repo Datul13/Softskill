@@ -1,0 +1,31 @@
+body{
+	background-color: #FFFF66;
+	font-family: sans-serif;
+}
+
+h1{
+	text-align: center;
+	margin: 60px auto;
+}
+
+.kotak-login{
+	text-align: center;
+	width: 300px;
+	height: 125px;
+	background: white;
+	margin: 70px auto;
+	padding-top: 40px;
+	border-radius: 2px;
+
+}
+
+.form_login{
+	font-size: 12pt;
+}
+
+.tombol_login{
+	border-radius: 7px;
+	color: #748;
+	font-weight: 30;
+}
+

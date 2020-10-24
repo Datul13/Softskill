@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form Login</title>
+</head>
+<body>
+	<fieldset>
+	<center>
+	<h1>LOGIN</h1>
+	<div>
+		<form>
+			<label>Username</label>
+			<input type="text" name="Username" id="user">
+			<br>
+			<br>
+			<label>Password</label>
+			<input type="password" name="Password" id="pass">
+			<br>
+			<br>
+			<input type="button" onclick="button()" value="LOGIN">
+		</form>
+	</div>
+
+	<script type="text/javascript">
+		function button(){
+			a = document.getElementById('user').value;
+			b = document.getElementById('pass').value;
+			if(a=="Saidatul" && b=="datul"){
+				alert("Selamat Anda Berhasil Login");
+				window.location.assign("2.html")
+			} else{
+				alert("Username atau Password Salah");
+			}
+		}
+	</script>
+	</center>
+	</fieldset>
+</body>
+</html>
