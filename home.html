@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>LOGIN</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<h1>Login</h1>
+	<div class="kotak-login">
+		<form>
+			<label>Username</label>
+			<input type="text" name="Username" class="form_login" id="user">
+			<br>
+			<br>
+			<label>Password</label>
+			<input type="password" name="Password" class="form_login" id="pass">
+			<br>
+			<br>
+			<input type="button" onclick="pencetbutton()" value="LOGIN" class="tombol_login">
+		</form>
+	</div>
+
+	<script type="text/javascript">
+		function pencetbutton(){
+			a = document.getElementById('user').value;
+			b = document.getElementById('pass').value;
+			if(a=="alif" && b=="admin"){
+				alert("Berhasil Login!!");
+				window.location.assign("portofolio.html")
+			} else{
+				alert("Gagal Login!! Pastikan Username dan Password benar!");
+			}
+		}
+	</script>
+
+</body>
+</html>
